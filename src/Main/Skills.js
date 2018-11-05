@@ -3,7 +3,7 @@ import '../css/fontello.css';
 const Skills=()=>{
 
 	return(
-		<div className="flex column text-center full-screen no-margin  justify-center skills-bgcolor">
+		<div id="second" className="flex column text-center full-screen no-margin  justify-center skills-bgcolor">
 		<div id="skills" className="padding-left-xxl invisible abs">
 			<h2 className="text-custom-2 ">{"<"}Personal<span className="text-custom-1">Skills </span>{">"}</h2>
 			<h1 className="no-spacing">

@@ -16,8 +16,7 @@ class App extends Component {
 			const about=document.getElementById("personal-data");
 			const arrowDown=document.getElementById("arrow-down");
 			const boundingHead=head.getBoundingClientRect()
-		   	console.log(Math.floor(boundingHead.top))
-		    if(Math.floor(boundingHead.top)<-825){
+		    if(Math.floor(boundingHead.top)<-600){
 		    	arrowDown.classList.remove("flex");
 		    	arrowDown.classList.add("d-none")
 		    	personal.classList.add("appear")
@@ -37,11 +36,11 @@ class App extends Component {
 				nav.classList.add("d-none");
 	    		nav.classList.remove("navigation-show");
 			}
-			 if(Math.floor(boundingHead.top)<-1600){
+			 if(Math.floor(boundingHead.top)<-1200){
 		    	skills.classList.add("skills")
 		    }
 		    else{ skills.classList.remove("skills")}
-		    if(Math.floor(boundingHead.top)<-2700){
+		    if(Math.floor(boundingHead.top)<-2200){
 		    	portfolio.classList.add("skills")
 		    }
 		    else{ portfolio.classList.remove("skills")}
