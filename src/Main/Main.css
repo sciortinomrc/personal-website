@@ -1,0 +1,97 @@
+.background{
+	background-color: #EEF5FB;
+}
+i{
+	color: #DBEEFC;
+	transition: ease-in 1s transform, ease-in 1s color, ease-in-out 1.5s all;
+}
+i:hover{
+	transform: scale(1.3);
+	color: #FF762C;
+}
+.spacing{
+	padding: 10px 40px;
+}
+
+i[aria-label]:after{
+	font-style: normal;
+	opacity:0;
+	visibility: hidden;
+	position: absolute;
+	font-size: 20px;
+	margin-top: -20px;
+	margin-left: -40px;
+	content: attr(aria-label);
+	background-color: grey;
+	color: white;
+	transition: ease 1.5s all;
+	font-family: 'Encode Sans Expanded';
+
+}
+i[aria-label]:hover:after{
+	opacity: 1;
+	visibility: visible;
+}
+
+.preview{
+	height: 100px;
+	width: 180px;
+}
+.shadow{
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5)
+}
+
+.rounded{
+	border-radius: 60px;
+}
+.border{
+	border: 3px solid black;
+}
+
+
+a[aria-label]:after{
+	font-style: normal;
+	opacity:0;
+	visibility: hidden;
+	position: absolute;
+	font-size: 20px;
+	margin-top: -20px;
+	margin-left: -200px;
+	content: attr(aria-label);
+	background-color: black;
+	color: orange;
+	transition: ease 0.3s all;
+	font-family: 'Encode Sans Expanded';
+
+}
+a[aria-label]:hover:after{
+	opacity: 1;
+	visibility: visible;
+}
+img#pic{ 
+	animation:none;
+	width: 20em;
+	border-radius: 100%!important;
+}
+
+.personal-bgcolor{
+	background-color:  #038DFF;
+}
+.skills-bgcolor{
+	background-color: #3AA6FF;
+}
+.portfolio-bgcolor{
+	background-color: #67B9FD;
+}
+.description-bgcolor{
+	background-color: #A7D1F3;
+}
+.scale-test{
+	transform: scale(2);
+}
+.double{
+	font-size: 1.5em
+}
+.relative{
+	position: relative;
+}

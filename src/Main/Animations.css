@@ -1,0 +1,55 @@
+@keyframes pop{
+	0%{width: 8em;}
+	50%{width:12em;}
+	100%{width: 11em;}
+}
+@keyframes popout{
+	0%{width: 12em;}
+	100%{width: 8em;}
+}
+a>img{
+	width: 8em;
+	animation-name: popout;
+	animation-duration: 0.5s;
+}
+
+a>img:hover{
+	animation-timing-function: ease-in-out;
+	animation-name: pop;
+	animation-duration:1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes appear{
+	0%{ 
+		opacity: 0; 
+		margin-top: -50px;
+	}
+	100%{ 
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+.appear{
+	animation-name: appear;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes skills{
+	0%{ 
+		transform: scale(0);
+		opacity: 0; 
+		margin-top: -50px;
+	}
+	100%{ 
+		transform: scale(1);
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+.skills{
+	animation-name: skills;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
