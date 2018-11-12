@@ -48,32 +48,6 @@ i[aria-label]:hover:after{
 	border: 3px solid black;
 }
 
-
-a[aria-label]:after{
-	font-style: normal;
-	opacity:0;
-	visibility: hidden;
-	position: absolute;
-	font-size: 20px;
-	margin-top: -20px;
-	margin-left: -200px;
-	content: attr(aria-label);
-	background-color: black;
-	color: orange;
-	transition: ease 0.3s all;
-	font-family: 'Encode Sans Expanded';
-
-}
-a[aria-label]:hover:after{
-	opacity: 1;
-	visibility: visible;
-}
-img#pic{ 
-	animation:none;
-	width: 20em;
-	border-radius: 100%!important;
-}
-
 .personal-bgcolor{
 	background-color:  #038DFF;
 }
@@ -94,4 +68,66 @@ img#pic{
 }
 .relative{
 	position: relative;
+}
+
+.border{
+	border: 1px solid black;
+}
+
+.carousel{
+	width: 800px;
+	height: 600px;
+	display: block;
+	scroll-behavior: smooth;
+}
+.carousel-inside{
+	overflow-y: hidden;
+	position: absolute;
+	display: inline-flex;
+	overflow-x: hidden;
+	width: 800px;
+	height: 600px;
+	background-color: skyblue;
+	z-index: 1;
+}
+.description{
+	position: absolute;
+	display: inline-flex;
+	overflow-x: hidden;
+	width: 800px;
+	height: 200px;
+	bottom:0px;
+	opacity: 0;
+	background-color: black;
+	z-index: 5;
+	transition: ease-out 1s opacity;
+}
+
+.left, .right{
+	position: relative;
+	z-index:10;
+	width:50px;
+	background-color: white;
+	height: 600px;
+	opacity: 0;
+	transition-delay: 3s;
+	transition: ease-in-out 2s opacity;
+}
+.left:hover, .right:hover{
+	opacity: 0.5
+}
+.left{ float: left }
+.right{ float: right;}
+
+.carousel-inside a{
+	position: relative;
+	z-index:2;
+}
+
+.carousel-inside a,.carousel-inside a img{
+	width: 800px;
+	height: 600px;
+}
+ul{
+	list-style: none;
 }
