@@ -1,9 +1,9 @@
 import React from 'react';
 const PersonalDescription=()=>{
 	return(
-		<div id="fourth" className="flex column margin-auto text-center full-screen margin-auto  justify-center description-bgcolor">
+		<div id="fourth">
 			<h2 className="text-custom-2">{"<"}About<span className="text-custom-1">Me </span>{">"}</h2>
-			<div className="margin-auto margin-top-none margin-bottom-none w-50 text-20">
+			<div>
 				<h2>Hello there!</h2>
 				<p>I am <b>Marco</b> from Italy, I live in the UK since October 2014 and I am a Full stack web developer.</p>
 				I am married with Gaia and have two cats: Ella and Chloe.<br />

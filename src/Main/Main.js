@@ -1,5 +1,4 @@
 import React from 'react';
-import './Main.css';
 import PersonalData from './PersonalData';
 import Skills from './Skills';
 import PersonalDescription from './PersonalDescription';

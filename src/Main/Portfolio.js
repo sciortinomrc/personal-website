@@ -4,10 +4,10 @@ import huddle from '../Pics/huddle.jpg';
 
 
 const showDescription=(event)=>{
-	document.styleSheets[4].cssRules[20].style.opacity= 0.7;
+	document.styleSheets[2].cssRules[32].style.height='200px';
 }
 const hideDescription=(event)=>{
-	document.styleSheets[4].cssRules[20].style.opacity= 0;
+	document.styleSheets[2].cssRules[32].style.height='0px';
 }
 const slideRight=()=>{
 	const carousel=document.getElementById('carousel');
@@ -31,39 +31,44 @@ const slideLeft=()=>{
 }
 const Portfolio=()=>{
 	return(
-		<div id="third" className="flex column full-screen margin-auto  justify-center portfolio-bgcolor">
-		<div id="portfolio" className="invisible flex align-end column padding-right-xl">
-			<h2 className="text-custom-2 text-center h1-carousel" >{"<"}My<span className="text-custom-1">Works </span>{">"}</h2>
-			<div className="border carousel" >
-				<div id="carousel" className="carousel-inside" >
+		<div id="third" >
+		<div id="portfolio" >
+			<h2 className="text-custom-2">{"<"}My<span className="text-custom-1">Works </span>{">"}</h2>
+			<div id="carousel-container" >
+				<div id="carousel" onTouchMove={console.log('start')} onMouseOver={showDescription} onMouseOut={hideDescription}>
 					
-					<a href="https://pagesify.herokuapp.com" target="_blank"  rel="noopener noreferrer" onMouseOver={()=>showDescription()} onMouseOut={()=>hideDescription()}>
-						<div className="description flex column text-center">
+					<a href="https://pagesify.herokuapp.com" target="_blank"  rel="noopener noreferrer" >
+						<div className="description">
 							<ul>
-								<lh><h3>Pagesify - Facebook pages showcase</h3></lh>
+								<li><h3>Pagesify - Facebook pages showcase</h3></li>
 								<li>- Front end: React - Redux - Bootstrap</li>
 								<li>- Back end: ExpressJS - PostgreSQL</li>
-							</ul></div>
-						<img src={pagesify} alt="Pagesify"  />
+							</ul>
+						</div>
+						<div>
+							<img src={pagesify} alt="Pagesify"  />
+						</div>
+
+						
 					</a>
-					<a href="https://sciortinomrc.github.io/frontEnd-from-design/" target="_blank"  rel="noopener noreferrer" onMouseOver={()=>showDescription()} onMouseOut={()=>hideDescription()}>
-						<div className="description flex column text-center">
+					<a href="https://sciortinomrc.github.io/frontEnd-from-design/" target="_blank"  rel="noopener noreferrer">
+						<div className="description">
 							<ul>
-								<lh><h3>Huddle - Mock landing page</h3></lh>
+								<li><h3>Huddle - Mock landing page</h3></li>
 								<li>- Front end merged to existing design</li>
 								<li>- HTML5, CSS, Responsive</li>
-							</ul></div>
-						<img src={huddle} alt="Huddle"  />
+							</ul>
+						</div>
+						<div>
+							<img src={huddle} alt="Huddle"  />
+						</div>
 					</a>
 
 					
 				</div>
-				<div id="left" className="left" onClick={slideLeft}></div>
-				<div id="right" className="right" onClick={slideRight}></div>
+				<div id="left"  onClick={slideLeft}></div>
+				<div id="right" onClick={slideRight}></div>
 				
-				{/*<a href="https://pagesify.herokuapp.com" target="_blank" aria-label="Pagesify - Facebook Pages Collection" rel="noopener noreferrer">
-					<img className="rounded border" src={pagesify} alt="Pagesify"  />
-				</a>*/}
 			</div>
 		</div>
 		</div>

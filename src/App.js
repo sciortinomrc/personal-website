@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Mobile.css';
 import Header from './Header/Header';
 import Nav from './Header/Nav';
 import Main from './Main/Main';
@@ -21,8 +22,8 @@ class App extends Component {
 		    	arrowDown.classList.add("d-none")
 		    	personal.classList.add("appear")
 		    }
-			else{
-				arrowDown.classList.remove("d-none");
+		else{
+			arrowDown.classList.remove("d-none");
 		    	arrowDown.classList.add("flex")
 		    	personal.classList.remove("appear")
 			}
@@ -48,7 +49,7 @@ class App extends Component {
 	}
   render() {
     return (
-      <div className="flex column">
+      <div>
 	    <Header />
 	    <Nav /> 
 	    <Main />
