@@ -22,7 +22,8 @@ class App extends Component {
 				head.style.opacity="0";
 			}
 			else if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.07){
-				document.styleSheets[2].cssRules[14].style.height=(window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight;
+				document.styleSheets[2].cssRules[14].style.height="80px";
+				head.style.opacity="0";
 			}
 			else{
 				document.styleSheets[2].cssRules[14].style.height="0px";
@@ -31,30 +32,31 @@ class App extends Component {
 			if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.4 && (window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight>0.23){
 				document.styleSheets[2].cssRules[15].style.fontSize=(window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight*1300+"%";
 				const dis=document.getElementsByClassName("disappear");
+				nav.children[0].style.width="";
+				nav.children[0].style.textAlign="";
+				nav.children[0].children[0].style.margin="";
+				nav.children[1].style.textAlign="";
+				nav.style.flexDirection="";
+				nav.children[1].opacity="";
 				[...dis].map(element=>{
 					element.classList.remove("disappear-animation")
-					nav.children[0].style.width="";
-					nav.children[0].style.textAlign="";
-					nav.children[0].children[0].style.margin="";
-					nav.children[1].style.textAlign="";
-					nav.style.flexDirection="";
-					nav.children[1].opacity="";
 				})
 			}
 			else if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.23){
+				document.styleSheets[2].cssRules[15].style.fontSize="3em"
 				const dis=document.getElementsByClassName("disappear");
 				[...dis].map(element=>{
 					element.classList.add("disappear-animation");
-					nav.children[0].style.width="50%";
-					nav.children[0].style.textAlign="left";
-					nav.children[0].children[0].style.margin="0px";
-					nav.children[1].style.textAlign="right";
-					window.addEventListener("animationend",(event)=>{
-						if(event.animationName==="disappear"){
-							nav.style.flexDirection="row";
-							nav.children[1].style.opacity="1"
-						}
-					})
+				})
+				nav.children[0].style.width="50%";
+				nav.children[0].style.textAlign="left";
+				nav.children[0].children[0].style.margin="0px";
+				nav.children[1].style.textAlign="right";
+				window.addEventListener("animationend",(event)=>{
+					if(event.animationName==="disappear"){
+						nav.style.flexDirection="row";
+						nav.children[1].style.opacity="1"
+					}
 				})
 			}
 
