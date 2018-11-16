@@ -39,6 +39,7 @@ div{
 		font-size: 5em;
 		top: 50px;
 		left: 10px;
+		position: fixed;
 	}
 	#header div p{
 		text-align: right;
@@ -59,25 +60,45 @@ div{
 		}
 /*nav*/
 	#navigation{
-		height: 70px;
 		position: fixed;
+		height: 0px;
 		z-index: 999;
+		width: 100%;
 		background-color: black;
 		top: 0;
 		overflow: hidden;
-		flex-direction: row;
+		flex-direction: column;
+		text-align: center;
+	}
+	#navigation h1{
+		font-size: 5em;
+		top: 50px;
+		left: 10px;
+		width: 100%;
+		transition: ease-in 2s margin;
+		transition-delay: 1s;
 	}
 	#navigation div{
-		width: 50%;
+		width: 100%;
+		height: auto;
 		display: inline-block;
+		transition-delay: 5s;
+		transition: ease-in 3s width;
 	}
 	#nav{
 		margin: auto;
 		text-align: right;
+		opacity: 0;
+		transition: ease-in 2s margin;
+		transition-delay: 1s;
 	}
 	#nav a{
 		padding: 0px 10px;
 	}
+	.disappear{
+		font-size: 1em;
+	}
+
 /*data*/
 	#first{
 		background-color:  #038DFF;
@@ -284,6 +305,7 @@ div{
 	#navigation{
 		width: 100%;
 		right: 0;
+		opacity: 0;
 		margin: 0px;
 		padding: 0px;
 	}

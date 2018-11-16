@@ -4,10 +4,10 @@ import huddle from '../Pics/huddle.jpg';
 
 
 const showDescription=(event)=>{
-	document.styleSheets[2].cssRules[32].style.height='200px';
+	document.styleSheets[2].cssRules[34].style.height='200px';
 }
 const hideDescription=(event)=>{
-	document.styleSheets[2].cssRules[32].style.height='0px';
+	document.styleSheets[2].cssRules[34].style.height='0px';
 }
 const slideRight=()=>{
 	const carousel=document.getElementById('carousel');

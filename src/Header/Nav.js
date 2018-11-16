@@ -4,8 +4,8 @@ import './Header.css';
 const Header=()=>{
 	return(
 		<div id="navigation">
-			<div className="text-white">
-			<h2><span className="text-orange">Everyone </span><span className="text-lblue">should </span><span className="text-green">code</span></h2>
+			<div >
+				<h1 ><span className="text-orange">Everyone </span><span className="disappear">in this country </span> <span className="text-lblue">should </span><span className="disappear">learn how to </span> <span className="text-green">code</span><span className="disappear">, it teaches you how to think."</span></h1>
 			</div>
 			<div id="nav">
 			<a id="afirst" href="#first">Marco Sciortino</a>
