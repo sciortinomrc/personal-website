@@ -11,7 +11,6 @@ const hideDescription=(event)=>{
 }
 const slideRight=()=>{
 	const carousel=document.getElementById('carousel');
-	console.log(carousel.scrollWidth)
 	if(carousel.scrollLeft===carousel.scrollWidth-800){
 		carousel.scroll({left: 0, behavior: 'smooth'})
 	}
@@ -21,7 +20,6 @@ const slideRight=()=>{
 }
 const slideLeft=()=>{
 	const carousel=document.getElementById('carousel');
-	console.log(carousel.scrollWidth)
 	if(carousel.scrollLeft===0){
 		carousel.scroll({left: carousel.scrollWidth-800, behavior: 'smooth'})
 	}
@@ -35,7 +33,7 @@ const Portfolio=()=>{
 		<div id="portfolio" >
 			<h2 className="text-custom-2">{"<"}My<span className="text-custom-1">Works </span>{">"}</h2>
 			<div id="carousel-container" >
-				<div id="carousel" onTouchMove={console.log('start')} onMouseOver={showDescription} onMouseOut={hideDescription}>
+				<div id="carousel" onTouchMove={(event)=>{console.log(event)}} onMouseOver={showDescription} onMouseOut={hideDescription}>
 					
 					<a href="https://pagesify.herokuapp.com" target="_blank"  rel="noopener noreferrer" >
 						<div className="description">

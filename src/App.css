@@ -254,12 +254,31 @@ div{
 	.text-custom-2{
 		color: #423B41;
 	}
-
-@media(min-width: 320px) and (max-width: 1400px){
-	div{ 
+@media (hover: none) {
+	#left, #right{
+		opacity:1;
+	}
+	div{
 		width: 100%!important;
-	 }
-	 h1{
+	}
+	#skills h1{
+		margin: 0px;
+	}
+	#carousel-container, #carousel, #left, #right{
+		height: 500px!important;
+	}
+	.description{
+		position: absolute;
+		width: 800px;
+		height: 200px!important;
+		bottom: 0px;
+		z-index: 10;
+		background-color: black;
+		opacity: 0.6;
+		overflow: hidden;
+		transition: ease-in-out 2s height;
+	}
+	h1{
 	 	font-size: 1em;
 	 	text-align: center!important;
 	 }
@@ -304,5 +323,16 @@ div{
 	}
 	#left:hover, #right:hover{
 		opacity: 0.8;
+	}
+	#fourth{
+		font-size: 14px
+	}
+}
+@media(max-width: 320px){
+	#navigation h1{
+		font-size: 1em!important
+	}
+	#skills h1 i{
+		font-size: 30px
 	}
 }

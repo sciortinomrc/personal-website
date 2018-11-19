@@ -17,7 +17,6 @@ class App extends Component {
 		const arrowDown=document.getElementById("arrow-down");
 		nav.children[0].children[0].addEventListener("animationend",(event)=>{
 						if(event.animationName==="disappear"){
-							console.log("animation end")
 							nav.children[0].style.width="50%"
 							nav.children[1].style.width="50%"
 							nav.children[1].style.display="flex"
@@ -29,8 +28,6 @@ class App extends Component {
 			const boundingH1=head.children[0].children[0];
 			const heightTrigger=boundingH1.offsetHeight;
 			const triggerPoint=(window.innerHeight+boundingHead.top)/window.innerHeight;
-			console.log({headerTop: boundingHead.top, innerHTML: window.innerHeight, triggerPoint: heightTrigger})
-			console.log({trigger: window.innerHeight+boundingHead.top, triggerPoint: heightTrigger})
 			//nav height
 			//	document.styleSheets[2].cssRules[14].style.height
 			//nav h1 
@@ -80,7 +77,6 @@ class App extends Component {
 				//if(window.innerHeight+boundingHead.top<=100){
 				//	personal.classList.add("appear")
 				//}
-				console.log((window.innerHeight+boundingHead.top)/window.innerHeight )
 
 				switch(true){
 					case (triggerPoint<-2.80):{
