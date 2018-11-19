@@ -8,83 +8,116 @@ import './Main/Animations.css';
 
 class App extends Component {
 	componentDidMount(){
+		const head=document.getElementById("header");
+		const nav=document.getElementById("navigation");
+		const personal=document.getElementById("personal-data");
+		const skills=document.getElementById("skills");
+		const portfolio=document.getElementById("portfolio");
+		const about=document.getElementById("personal-data");
+		const arrowDown=document.getElementById("arrow-down");
+		nav.children[0].children[0].addEventListener("animationend",(event)=>{
+						if(event.animationName==="disappear"){
+							console.log("animation end")
+							nav.children[0].style.width="50%"
+							nav.children[1].style.width="50%"
+							nav.children[1].style.display="flex"
+						}
+							
+					})
 		window.addEventListener('scroll',(event)=>{
-			const head=document.getElementById("header");
-			const nav=document.getElementById("navigation");
-			const personal=document.getElementById("personal-data");
-			const skills=document.getElementById("skills");
-			const portfolio=document.getElementById("portfolio");
-			const about=document.getElementById("personal-data");
-			const arrowDown=document.getElementById("arrow-down");
 			const boundingHead=head.getBoundingClientRect()
-			if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.4 && (window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight>0.07){
-				document.styleSheets[2].cssRules[14].style.height=(window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight*100+"%";
-				head.style.opacity="0";
-			}
-			else if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.07){
-				document.styleSheets[2].cssRules[14].style.height="80px";
-				head.style.opacity="0";
-			}
-			else{
-				document.styleSheets[2].cssRules[14].style.height="0px";
-				head.style.opacity="1";
-			}
-			if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.4 && (window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight>0.23){
-				document.styleSheets[2].cssRules[15].style.fontSize=(window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight*1300+"%";
-				const dis=document.getElementsByClassName("disappear");
-				nav.children[0].style.width="";
-				nav.children[0].style.textAlign="";
-				nav.children[0].children[0].style.margin="";
-				nav.children[1].style.textAlign="";
-				nav.style.flexDirection="";
-				nav.children[1].opacity="";
-				[...dis].map(element=>{
-					element.classList.remove("disappear-animation")
-				})
-			}
-			else if((window.innerHeight-Math.abs(boundingHead.top))/window.innerHeight<=0.23){
-				document.styleSheets[2].cssRules[15].style.fontSize="3em"
-				const dis=document.getElementsByClassName("disappear");
-				[...dis].map(element=>{
-					element.classList.add("disappear-animation");
-				})
-				nav.children[0].style.width="50%";
-				nav.children[0].style.textAlign="left";
-				nav.children[0].children[0].style.margin="0px";
-				nav.children[1].style.textAlign="right";
-				window.addEventListener("animationend",(event)=>{
-					if(event.animationName==="disappear"){
-						nav.style.flexDirection="row";
-						nav.children[1].style.opacity="1"
+			const boundingH1=head.children[0].children[0];
+			const heightTrigger=boundingH1.offsetHeight;
+			const triggerPoint=(window.innerHeight+boundingHead.top)/window.innerHeight;
+			console.log({headerTop: boundingHead.top, innerHTML: window.innerHeight, triggerPoint: heightTrigger})
+			console.log({trigger: window.innerHeight+boundingHead.top, triggerPoint: heightTrigger})
+			//nav height
+			//	document.styleSheets[2].cssRules[14].style.height
+			//nav h1 
+			//	document.styleSheets[2].cssRules[15]
+			//arrow
+				if(window.innerHeight+boundingHead.top<heightTrigger+200){
+					arrowDown.classList.add("d-none")
+				}
+				else{
+					arrowDown.classList.remove("d-none")
+				}
+			//header - nav
+				if(window.innerHeight+boundingHead.top<=100){
+					nav.children[0].style.width="100%"
+					nav.children[1].style.display="flex"
+					head.style.opacity="0"
+					nav.children[0].children[0].style.fontSize="2em"
+					nav.style.height=100+"px";
+					nav.children[0].children[0].style.textAlign="left";
+					const toHide=document.getElementsByClassName("disappear");
+					[...toHide].map(element=>{
+						element.classList.add("disappear-animation")
+					})
+				}
+				else if(window.innerHeight+boundingHead.top<heightTrigger+150 && window.innerHeight+boundingHead.top>100){
+					head.style.opacity="0"
+					nav.children[1].style.display=""
+					nav.style.height=window.innerHeight+boundingHead.top+"px"
+					if(5-(5/(boundingHead.height+boundingHead.top))*100>3){
+						nav.children[0].children[0].style.fontSize=4-(5/(boundingHead.height+boundingHead.top))*80+"em";
 					}
-				})
-			}
+					else{
+						nav.children[0].children[0].style.fontSize="2em";
+					}
+					nav.children[0].children[0].style.textAlign="center"
+					const toHide=document.getElementsByClassName("disappear");
+					[...toHide].map(element=>{
+						element.classList.remove("disappear-animation")
+					})
+				}
+				else{
+					nav.children[0].children[0].style.fontSize="5em"
+					head.style.opacity="1"
+					nav.style.height="";
+				}
+			//remaining
+				//if(window.innerHeight+boundingHead.top<=100){
+				//	personal.classList.add("appear")
+				//}
+				console.log((window.innerHeight+boundingHead.top)/window.innerHeight )
+
+				switch(true){
+					case (triggerPoint<-2.80):{
+						document.getElementById("athird").style.fontWeight="normal"
+						document.getElementById("afourth").style.fontWeight="bold";
+						break;
+					}
+					case (triggerPoint<-1.80):{
+						document.getElementById("asecond").style.fontWeight="normal"
+						document.getElementById("athird").style.fontWeight="bold"
+						document.getElementById("afourth").style.fontWeight="normal"
+						portfolio.classList.add("skills"); break;
+					}
+					case (triggerPoint<-0.80):{
+						document.getElementById("afirst").style.fontWeight="normal"
+						document.getElementById("asecond").style.fontWeight="bold"
+						document.getElementById("athird").style.fontWeight="normal"
+						portfolio.classList.remove("skills");
+						skills.classList.add("skills"); break;
+					}
+					case (triggerPoint<0.10):{
+						document.getElementById("afirst").style.fontWeight="bold"
+						document.getElementById("asecond").style.fontWeight="normal"
+						skills.classList.remove("skills");
+						personal.classList.add("appear"); break;
+					}
+					
+					default: {
+						portfolio.classList.remove("skills");
+						personal.classList.remove("appear");
+						skills.classList.remove("skills"); break;
+					}
+				}
 
 
-
-
-		    if(Math.floor(boundingHead.top)<-600){
-		    	arrowDown.classList.remove("flex");
-		    	arrowDown.classList.add("d-none")
-		    	personal.classList.add("appear")
-		    }
-		else{
-			arrowDown.classList.remove("d-none");
-		    	arrowDown.classList.add("flex")
-		    	personal.classList.remove("appear")
-			}
-
-
-			if(Math.floor(boundingHead.top)<-1200){
-		    	skills.classList.add("skills")
-		    }
-		    else{ skills.classList.remove("skills")}
-		    if(Math.floor(boundingHead.top)<-2200){
-		    	portfolio.classList.add("skills")
-		    }
-		    else{ portfolio.classList.remove("skills")}
-		})
-	}
+	})
+}
   render() {
     return (
       <div>
