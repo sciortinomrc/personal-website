@@ -50,7 +50,7 @@ class App extends Component {
 					head.style.opacity="0"
 					nav.children[0].children[0].style.fontSize="2em"
 					nav.style.height=100+"px";
-					nav.children[0].children[0].style.textAlign="left";
+					nav.children[0].children[0].style.textAlign="center";
 					const toHide=document.getElementsByClassName("disappear");
 					[...toHide].map(element=>{
 						element.classList.add("disappear-animation")
