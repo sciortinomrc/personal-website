@@ -6,13 +6,15 @@ import huddle from '../Pics/huddle.jpg';
 const showDescription=(event)=>{
 	const descr=document.getElementsByClassName("description");
 	[...descr].map(element=>{
-		element.style.height='200px'
+		element.style.height='200px';
+		return null
 	})
 }
 const hideDescription=(event)=>{
 	const descr=document.getElementsByClassName("description");
 	[...descr].map(element=>{
-		element.style.height='0px'
+		element.style.height='0px';
+		return null
 	})
 }
 const slideRight=()=>{

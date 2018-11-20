@@ -13,7 +13,6 @@ class App extends Component {
 		const personal=document.getElementById("personal-data");
 		const skills=document.getElementById("skills");
 		const portfolio=document.getElementById("portfolio");
-		const about=document.getElementById("personal-data");
 		const arrowDown=document.getElementById("arrow-down");
 		window.addEventListener('scroll',(event)=>{
 			const boundingHead=head.getBoundingClientRect();
@@ -45,7 +44,8 @@ class App extends Component {
 					nav.children[0].children[0].style.textAlign="center";
 					const toHide=document.getElementsByClassName("disappear");
 					[...toHide].map(element=>{
-						element.classList.add("disappear-animation")
+						element.classList.add("disappear-animation");
+						return null
 					})
 				}
 				else if(window.innerHeight+boundingHead.top<heightTrigger+80 && window.innerHeight+boundingHead.top>100){
@@ -69,7 +69,8 @@ class App extends Component {
 					nav.children[0].children[0].style.textAlign="center"
 					const toHide=document.getElementsByClassName("disappear");
 					[...toHide].map(element=>{
-						element.classList.remove("disappear-animation")
+						element.classList.remove("disappear-animation");
+						return null
 					})
 				}
 				else{
