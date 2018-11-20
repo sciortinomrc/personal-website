@@ -25,9 +25,9 @@ class App extends Component {
 					})
 		window.addEventListener('scroll',(event)=>{
 			const boundingHead=head.getBoundingClientRect();
-			if(boundingHead.top===0){
-				nav.children[0].children[0].style.fontSize="5em"
-			}
+			// if(boundingHead.top===0){
+			// 	nav.children[0].children[0].style.fontSize="5em"
+			// }
 			const boundingH1=head.children[0].children[0];
 			const heightTrigger=boundingH1.offsetHeight;
 			const triggerPoint=(window.innerHeight+boundingHead.top)/window.innerHeight;
@@ -56,7 +56,7 @@ class App extends Component {
 						element.classList.add("disappear-animation")
 					})
 				}
-				else if(window.innerHeight+boundingHead.top<heightTrigger+150 && window.innerHeight+boundingHead.top>100){
+				else if(window.innerHeight+boundingHead.top<heightTrigger+80 && window.innerHeight+boundingHead.top>100){
 					console.log({
 						top: boundingHead.top,
 						height: boundingHead.height,
@@ -65,12 +65,14 @@ class App extends Component {
 					head.style.opacity="0"
 					nav.children[1].style.display=""
 					nav.style.height=window.innerHeight+boundingHead.top+"px"
-					if(scale>5) nav.children[0].children[0].style.fontSize="5em";
-					else if(scale<=5 && scale>2){
-						nav.children[0].children[0].style.fontSize=scale+"em";
-					}
-					else{
-						nav.children[0].children[0].style.fontSize="2em";
+					if(!window.matchMedia("(hover: none)").matches){
+						if(scale>5) nav.children[0].children[0].style.fontSize="5em";
+						else if(scale<=5 && scale>2){
+							nav.children[0].children[0].style.fontSize=scale+"em";
+						}
+						else{
+							nav.children[0].children[0].style.fontSize="2em";
+						}
 					}
 					nav.children[0].children[0].style.textAlign="center"
 					const toHide=document.getElementsByClassName("disappear");
@@ -79,7 +81,11 @@ class App extends Component {
 					})
 				}
 				else{
+					if(!window.matchMedia("(hover: none)").matches){
+
 					nav.children[0].children[0].style.fontSize="5em"
+					}
+					else{nav.children[0].children[0].style.fontSize="2em"}
 					head.style.opacity="1"
 					nav.style.height="";
 				}
