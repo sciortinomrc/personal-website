@@ -15,14 +15,6 @@ class App extends Component {
 		const portfolio=document.getElementById("portfolio");
 		const about=document.getElementById("personal-data");
 		const arrowDown=document.getElementById("arrow-down");
-		nav.children[0].children[0].addEventListener("animationend",(event)=>{
-						if(event.animationName==="disappear"){
-							nav.children[0].style.width="50%"
-							nav.children[1].style.width="50%"
-							nav.children[1].style.display="flex"
-						}
-							
-					})
 		window.addEventListener('scroll',(event)=>{
 			const boundingHead=head.getBoundingClientRect();
 			// if(boundingHead.top===0){
@@ -96,26 +88,36 @@ class App extends Component {
 
 				switch(true){
 					case (triggerPoint<-2.80):{
-						document.getElementById("athird").style.fontWeight="normal"
+						document.getElementById("athird").style.fontWeight="normal";
+						document.getElementById("athird").style.backgroundColor="";
 						document.getElementById("afourth").style.fontWeight="bold";
+						document.getElementById("afourth").style.backgroundColor="#A7D1F3";
 						break;
 					}
 					case (triggerPoint<-1.80):{
 						document.getElementById("asecond").style.fontWeight="normal"
+						document.getElementById("asecond").style.backgroundColor="";
 						document.getElementById("athird").style.fontWeight="bold"
+						document.getElementById("athird").style.backgroundColor="#67B9FD";
 						document.getElementById("afourth").style.fontWeight="normal"
+						document.getElementById("afourth").style.backgroundColor="";
 						portfolio.classList.add("skills"); break;
 					}
 					case (triggerPoint<-0.80):{
 						document.getElementById("afirst").style.fontWeight="normal"
+						document.getElementById("afirst").style.backgroundColor="";
 						document.getElementById("asecond").style.fontWeight="bold"
+						document.getElementById("asecond").style.backgroundColor="#3AA6FF";
 						document.getElementById("athird").style.fontWeight="normal"
+						document.getElementById("athird").style.backgroundColor="";
 						portfolio.classList.remove("skills");
 						skills.classList.add("skills"); break;
 					}
 					case (triggerPoint<0.10):{
 						document.getElementById("afirst").style.fontWeight="bold"
+						document.getElementById("afirst").style.backgroundColor="#038DFF";
 						document.getElementById("asecond").style.fontWeight="normal"
+						document.getElementById("asecond").style.backgroundColor="";
 						skills.classList.remove("skills");
 						personal.classList.add("appear"); break;
 					}

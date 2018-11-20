@@ -89,6 +89,7 @@ div{
 	}
 	#navigation #nav{
 		margin: auto;
+		margin-bottom: 0px;
 		flex-direction:row;
 		text-align: right;
 		display: none;
