@@ -24,7 +24,10 @@ class App extends Component {
 							
 					})
 		window.addEventListener('scroll',(event)=>{
-			const boundingHead=head.getBoundingClientRect()
+			const boundingHead=head.getBoundingClientRect();
+			if(boundingHead.top===0){
+				nav.children[0].children[0].style.fontSize="5em"
+			}
 			const boundingH1=head.children[0].children[0];
 			const heightTrigger=boundingH1.offsetHeight;
 			const triggerPoint=(window.innerHeight+boundingHead.top)/window.innerHeight;
@@ -40,6 +43,7 @@ class App extends Component {
 					arrowDown.classList.remove("d-none")
 				}
 			//header - nav
+				let scale=((boundingHead.height+boundingHead.top)/7/10);
 				if(window.innerHeight+boundingHead.top<=100){
 					nav.children[0].style.width="100%"
 					nav.children[1].style.display="flex"
@@ -53,11 +57,17 @@ class App extends Component {
 					})
 				}
 				else if(window.innerHeight+boundingHead.top<heightTrigger+150 && window.innerHeight+boundingHead.top>100){
+					console.log({
+						top: boundingHead.top,
+						height: boundingHead.height,
+						scale: (((boundingHead.height+boundingHead.top)/7/10))
+					})
 					head.style.opacity="0"
 					nav.children[1].style.display=""
 					nav.style.height=window.innerHeight+boundingHead.top+"px"
-					if(5-(5/(boundingHead.height+boundingHead.top))*100>3){
-						nav.children[0].children[0].style.fontSize=4-(5/(boundingHead.height+boundingHead.top))*80+"em";
+					if(scale>5) nav.children[0].children[0].style.fontSize="5em";
+					else if(scale<=5 && scale>2){
+						nav.children[0].children[0].style.fontSize=scale+"em";
 					}
 					else{
 						nav.children[0].children[0].style.fontSize="2em";
