@@ -47,7 +47,7 @@ div{
 		transition: ease-out .5s margin;
 	}
 	#header div p{
-		top: 40%;
+		top: 50%;
 		right: 100px;
 
 		position: fixed;
