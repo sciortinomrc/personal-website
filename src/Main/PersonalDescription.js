@@ -5,7 +5,7 @@ const PersonalDescription=()=>{
 			<h2 className="text-custom-2">{"<"}About<span className="text-custom-1">Me </span>{">"}</h2>
 			<div>
 				<h2>Hello there!</h2>
-				<p>I am <b>Marco</b> from Italy, I live in the UK since October 2014 and I am a Full stack web developer.</p>
+				<p>I am <b>Marco</b> from Italy, I have been living in the UK since October 2014 and I am a Full stack web developer.</p>
 				I am married to Gaia and have two cats: Ella and Chloe.<br />
 				My passion for drama and musical theatre had made me pack my whole world and move to this adventure called United Kingdom.<br />
 				I have worked in various places from Fastfood to Big name retailer but it's never been for me. <br />
