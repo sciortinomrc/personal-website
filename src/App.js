@@ -35,11 +35,13 @@ class App extends Component {
 				}
 			//header - nav
 				let scale=((boundingHead.height+boundingHead.top)/7/10);
+				console.log((boundingHead.height+boundingHead.top))
+				console.log(scale)
 				if(window.innerHeight+boundingHead.top<=100){
 					nav.children[0].style.width="100%"
 					nav.children[1].style.display="flex"
 					head.style.opacity="0"
-					nav.children[0].children[0].style.fontSize="2em"
+					nav.children[0].children[0].style.fontSize="3vh"
 					nav.style.height=100+"px";
 					nav.children[0].children[0].style.textAlign="center";
 					const toHide=document.getElementsByClassName("disappear");
@@ -48,22 +50,18 @@ class App extends Component {
 						return null
 					})
 				}
-				else if(window.innerHeight+boundingHead.top<heightTrigger+80 && window.innerHeight+boundingHead.top>100){
-					console.log({
-						top: boundingHead.top,
-						height: boundingHead.height,
-						scale: (((boundingHead.height+boundingHead.top)/7/10))
-					})
+				else if(window.innerHeight+boundingHead.top<heightTrigger+200 && window.innerHeight+boundingHead.top>10){
+					console.log(scale)
 					head.style.opacity="0"
 					nav.children[1].style.display=""
 					nav.style.height=window.innerHeight+boundingHead.top+"px"
 					if(!window.matchMedia("(hover: none)").matches){
-						if(scale>5) nav.children[0].children[0].style.fontSize="5em";
-						else if(scale<=5 && scale>2){
-							nav.children[0].children[0].style.fontSize=scale+"em";
+						if(scale>=5.5) nav.children[0].children[0].style.fontSize="5vw";
+						else if(scale<5.5 && scale>2.5){
+							nav.children[0].children[0].style.fontSize=scale-0.5+"vw";
 						}
 						else{
-							nav.children[0].children[0].style.fontSize="2em";
+							nav.children[0].children[0].style.fontSize="3vh";
 						}
 					}
 					nav.children[0].children[0].style.textAlign="center"
@@ -76,9 +74,9 @@ class App extends Component {
 				else{
 					if(!window.matchMedia("(hover: none)").matches){
 
-					nav.children[0].children[0].style.fontSize="5em"
+					nav.children[0].children[0].style.fontSize="2vh"
 					}
-					else{nav.children[0].children[0].style.fontSize="2em"}
+					else{nav.children[0].children[0].style.fontSize="2vh"}
 					head.style.opacity="1"
 					nav.style.height="";
 				}
