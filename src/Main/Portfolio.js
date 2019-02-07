@@ -47,7 +47,7 @@ const Portfolio=()=>{
 						<div className="description">
 							<ul>
 								<li><h3>Pagesify - Facebook pages showcase</h3></li>
-								<li>- Front end: React - Redux - Bootstrap</li>
+								<li>- Front end: React - Redux - CSS</li>
 								<li>- Back end: ExpressJS - PostgreSQL</li>
 							</ul>
 						</div>

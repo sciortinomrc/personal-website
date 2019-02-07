@@ -79,7 +79,7 @@ div{
 		text-align: center;
 	}
 	#navigation h1{
-		font-size: 5em;
+		font-size: 5vw;
 		margin-bottom: 0px;
 		left: 10px;
 		width: 100%;
@@ -180,6 +180,8 @@ div{
 		display: flex;
 		flex-wrap: wrap;
 		overflow: hidden;
+		border-radius: 30px;
+		border:1px solid black;
 	}
 	#carousel a{
 		width: 100%;
@@ -187,6 +189,7 @@ div{
 	#carousel img{
 		width: 800px;
 		height: 600px;
+		border-radius: 30px;
 	}
 	#carousel a div{
 		position: relative;
@@ -217,6 +220,7 @@ div{
 		z-index: 5;
 		opacity: 0.3;
 		transition: ease-out 1s opacity;
+		border-radius: 30px;
 	}
 	#right{
 		background: linear-gradient(to left, grey, transparent);
@@ -357,7 +361,7 @@ div{
 		margin-right: auto;
 	}
 	#second h1{
-		font-size: 12px;
+		font-size: 5vw;
 	}
 	#portfolio{
 		width: 100%;
@@ -379,7 +383,7 @@ div{
 }
 @media(max-width: 320px){
 	#navigation h1{
-		font-size: 1em!important
+		font-size: 5vw;
 	}
 	#skills h1 i{
 		font-size: 30px

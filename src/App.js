@@ -9,91 +9,67 @@ import './Main/Animations.css';
 class App extends Component {
 	componentDidMount(){
 		const head=document.getElementById("header");
+		const h1=document.getElementById("text");
+		const navh1=document.getElementById("nav-text");
 		const nav=document.getElementById("navigation");
 		const personal=document.getElementById("personal-data");
 		const skills=document.getElementById("skills");
 		const portfolio=document.getElementById("portfolio");
 		const arrowDown=document.getElementById("arrow-down");
+		const steveJobs=document.getElementById("jobs");
+		let value=steveJobs.offsetTop+steveJobs.offsetHeight+10
+		let triggerPoint=(h1.offsetTop*2)+h1.offsetHeight+20;
+		let boundingHead, scale;
+		window.addEventListener("resize",(event)=>{
+			value=steveJobs.offsetTop+steveJobs.offsetHeight+10
+			triggerPoint=(h1.offsetTop*2)+h1.offsetHeight+20;
+			boundingHead=head.getBoundingClientRect();
+			scale=((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop));
+		})
 		window.addEventListener('scroll',(event)=>{
-			const boundingHead=head.getBoundingClientRect();
-			// if(boundingHead.top===0){
-			// 	nav.children[0].children[0].style.fontSize="5em"
-			// }
-			const boundingH1=head.children[0].children[0];
-			const heightTrigger=boundingH1.offsetHeight;
-			const triggerPoint=(window.innerHeight+boundingHead.top)/window.innerHeight;
-			//nav height
-			//	document.styleSheets[2].cssRules[14].style.height
-			//nav h1 
-			//	document.styleSheets[2].cssRules[15]
-			//arrow
-				if(window.innerHeight+boundingHead.top<heightTrigger+200){
-					arrowDown.classList.add("d-none")
-				}
-				else{
-					arrowDown.classList.remove("d-none")
-				}
+			boundingHead=head.getBoundingClientRect();
+			arrowDown.style.display=(window.innerHeight+boundingHead.top<triggerPoint)?"none":"";
+			steveJobs.style.display=(value>=window.innerHeight+boundingHead.top)?"none":"";
 			//header - nav
-				let scale=((boundingHead.height+boundingHead.top)/7/10);
-				console.log((boundingHead.height+boundingHead.top))
+				scale=((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop));
 				console.log(scale)
-				if(window.innerHeight+boundingHead.top<=100){
-					nav.children[0].style.width="100%"
-					nav.children[1].style.display="flex"
+				if(window.innerHeight+boundingHead.top<triggerPoint && scale>0.2){
 					head.style.opacity="0"
-					nav.children[0].children[0].style.fontSize="3vh"
-					nav.style.height=100+"px";
-					nav.children[0].children[0].style.textAlign="center";
+					if(scale>0.4 && scale<1){
+						navh1.style.fontSize="calc("+window.getComputedStyle(h1,null).fontSize+"*"+scale+")";
+					}
+					nav.style.display="";
+					nav.children[1].style.display=""
+					nav.style.height=window.innerHeight+boundingHead.top+"px"
+					const toHide=document.getElementsByClassName("disappear");					
+					[...toHide].map(element=>{
+						element.classList.remove("disappear-animation");
+						return null 
+					})
+				}
+				else if(scale<=0.2){
 					const toHide=document.getElementsByClassName("disappear");
 					[...toHide].map(element=>{
 						element.classList.add("disappear-animation");
 						return null
 					})
 				}
-				else if(window.innerHeight+boundingHead.top<heightTrigger+200 && window.innerHeight+boundingHead.top>10){
-					console.log(scale)
-					head.style.opacity="0"
-					nav.children[1].style.display=""
-					nav.style.height=window.innerHeight+boundingHead.top+"px"
-					if(!window.matchMedia("(hover: none)").matches){
-						if(scale>=5.5) nav.children[0].children[0].style.fontSize="5vw";
-						else if(scale<5.5 && scale>2.5){
-							nav.children[0].children[0].style.fontSize=scale-0.5+"vw";
-						}
-						else{
-							nav.children[0].children[0].style.fontSize="3vh";
-						}
-					}
-					nav.children[0].children[0].style.textAlign="center"
-					const toHide=document.getElementsByClassName("disappear");
-					[...toHide].map(element=>{
-						element.classList.remove("disappear-animation");
-						return null
-					})
+				else {
+					head.style.opacity=1;
+					nav.style.display="none"
 				}
-				else{
-					if(!window.matchMedia("(hover: none)").matches){
 
-					nav.children[0].children[0].style.fontSize="2vh"
-					}
-					else{nav.children[0].children[0].style.fontSize="2vh"}
-					head.style.opacity="1"
-					nav.style.height="";
-				}
-			//remaining
-				//if(window.innerHeight+boundingHead.top<=100){
-				//	personal.classList.add("appear")
-				//}
+			// //remaining
 
 				switch(true){
-					case (triggerPoint<-2.80):{
+					case (scale<-3.80):{
 						document.getElementById("athird").style.fontWeight="normal";
 						document.getElementById("athird").style.backgroundColor="";
 						document.getElementById("afourth").style.fontWeight="bold";
 						document.getElementById("afourth").style.backgroundColor="#A7D1F3";
 						break;
 					}
-					case (triggerPoint<-1.80):{
+					case (scale<-2.80):{
 						document.getElementById("asecond").style.fontWeight="normal"
 						document.getElementById("asecond").style.backgroundColor="";
 						document.getElementById("athird").style.fontWeight="bold"
@@ -102,7 +78,7 @@ class App extends Component {
 						document.getElementById("afourth").style.backgroundColor="";
 						portfolio.classList.add("skills"); break;
 					}
-					case (triggerPoint<-0.80):{
+					case (scale<-0.60):{
 						document.getElementById("afirst").style.fontWeight="normal"
 						document.getElementById("afirst").style.backgroundColor="";
 						document.getElementById("asecond").style.fontWeight="bold"
@@ -112,7 +88,7 @@ class App extends Component {
 						portfolio.classList.remove("skills");
 						skills.classList.add("skills"); break;
 					}
-					case (triggerPoint<0.10):{
+					case (scale<0.3):{
 						document.getElementById("afirst").style.fontWeight="bold"
 						document.getElementById("afirst").style.backgroundColor="#038DFF";
 						document.getElementById("asecond").style.fontWeight="normal"

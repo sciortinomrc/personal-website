@@ -1,11 +1,12 @@
 
 @keyframes flash{
 	from{opacity: 1;
-		padding-top: 0px;}
+		top: 0px;}
 	to {opacity: 0;
-		padding-top: 10px;}
+		top: 10px;}
 }
 .flash{
+	position:relative;
 	font-size: 100px;
 	animation-name: flash;
 	animation-duration: 0.5s;
