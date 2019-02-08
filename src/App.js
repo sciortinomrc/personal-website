@@ -8,7 +8,7 @@ import './Main/Animations.css';
 
 class App extends Component {
 	componentDidMount(){
-		const head=document.getElementById("header");
+		const head = document.getElementById("header");
 		const h1=document.getElementById("text");
 		const navh1=document.getElementById("nav-text");
 		const nav=document.getElementById("navigation");
