@@ -35,7 +35,7 @@ class App extends Component {
 				console.log(scale)
 				if(window.innerHeight+boundingHead.top<triggerPoint && scale>0.2){
 					head.style.opacity="0"
-					if(scale>0.4 && scale<1){
+					if(scale>0.4 && scale<1.1){
 						navh1.style.fontSize="calc("+window.getComputedStyle(h1,null).fontSize+"*"+scale+")";
 					}
 					nav.style.display="";
