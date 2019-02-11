@@ -1,7 +1,7 @@
 import React from 'react';
 import pagesify from '../Pics/pagesify.png';
 import huddle from '../Pics/huddle.jpg';
-
+import matching from '../Pics/matching.jpg';
 
 const showDescription=(event)=>{
 	const descr=document.getElementsByClassName("description");
@@ -53,9 +53,18 @@ const Portfolio=()=>{
 						</div>
 						<div>
 							<img src={pagesify} alt="Pagesify"  />
+						</div>		
+					</a>
+					<a href="https://sciortinomrc.github.io/matching-game/" target="_blank"  rel="noopener noreferrer">
+						<div className="description">
+							<ul>
+								<li><h3>Matching game</h3></li>
+								<li>- HTML5, CSS, Vanilla Javascript</li>
+							</ul>
 						</div>
-
-						
+						<div>
+							<img src={matching} alt="Matching game"  />
+						</div>
 					</a>
 					<a href="https://sciortinomrc.github.io/frontEnd-from-design/" target="_blank"  rel="noopener noreferrer">
 						<div className="description">
@@ -69,8 +78,6 @@ const Portfolio=()=>{
 							<img src={huddle} alt="Huddle"  />
 						</div>
 					</a>
-
-					
 				</div>
 				<div id="left"  onClick={slideLeft}></div>
 				<div id="right" onClick={slideRight}></div>
