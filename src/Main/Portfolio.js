@@ -2,6 +2,7 @@ import React from 'react';
 import pagesify from '../Pics/pagesify.png';
 import huddle from '../Pics/huddle.jpg';
 import matching from '../Pics/matching.jpg';
+import calendar from '../Pics/calendar.png';
 
 const showDescription=(event)=>{
 	const descr=document.getElementsByClassName("description");
@@ -54,6 +55,17 @@ const Portfolio=()=>{
 						<div>
 							<img src={pagesify} alt="Pagesify"  />
 						</div>		
+					</a>
+					<a href="https://my-cool-calendar.netlify.com/" target="_blank"  rel="noopener noreferrer">
+						<div className="description">
+							<ul>
+								<li><h3>Fake calendar for reminders</h3></li>
+								<li>- React/Redux, CSS3</li>
+							</ul>
+						</div>
+						<div>
+							<img src={calendar} alt="My-Cool-Calendar"  />
+						</div>
 					</a>
 					<a href="https://sciortinomrc.github.io/matching-game/" target="_blank"  rel="noopener noreferrer">
 						<div className="description">
