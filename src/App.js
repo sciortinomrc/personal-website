@@ -19,12 +19,16 @@ class App extends Component {
 		const steveJobs=document.getElementById("jobs");
 		let value=steveJobs.offsetTop+steveJobs.offsetHeight+10
 		let triggerPoint=(h1.offsetTop*2)+h1.offsetHeight+20;
-		let boundingHead, scale;
+		let boundingHead=head.getBoundingClientRect(); 
+		let scale=(((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop)))*1.2;
+		if(scale<1.2){
+			head.style.opacity="0"
+		}
 		window.addEventListener("resize",(event)=>{
 			value=steveJobs.offsetTop+steveJobs.offsetHeight+10
 			triggerPoint=(h1.offsetTop*2)+h1.offsetHeight+20;
 			boundingHead=head.getBoundingClientRect();
-			scale=((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop));
+			scale=(((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop)))*1.2;
 		})
 		window.addEventListener('scroll',(event)=>{
 			boundingHead=head.getBoundingClientRect();
@@ -32,10 +36,9 @@ class App extends Component {
 			steveJobs.style.display=(value>=window.innerHeight+boundingHead.top)?"none":"";
 			//header - nav
 				scale=((boundingHead.height+boundingHead.top)/(triggerPoint-h1.offsetTop));
-				console.log(scale)
 				if(window.innerHeight+boundingHead.top<triggerPoint && scale>0.2){
 					head.style.opacity="0"
-					if(scale>0.4 && scale<1.1){
+					if(scale>0.4 && scale<1){
 						navh1.style.fontSize="calc("+window.getComputedStyle(h1,null).fontSize+"*"+scale+")";
 					}
 					nav.style.display="";
@@ -48,6 +51,8 @@ class App extends Component {
 					})
 				}
 				else if(scale<=0.2){
+					navh1.style.fontSize="calc("+window.getComputedStyle(h1,null).fontSize+"*"+0.4+")";
+					nav.style.height="100px"
 					const toHide=document.getElementsByClassName("disappear");
 					[...toHide].map(element=>{
 						element.classList.add("disappear-animation");
