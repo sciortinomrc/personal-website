@@ -8,8 +8,15 @@
 
 	<title>Marco Sciortino</title>
 	<style>
-		body{
+		html, body {
 			font-family: Lato;
+		}
+		body{
+			display: flex;
+			margin: 0px;
+		}
+		header {
+			text-align: center
 		}
 		a{
 			text-decoration: none;
@@ -23,10 +30,40 @@
 			flex-direction: column;
 			padding-bottom: 50px;
 		}
+		#left{
+			width: 30%;
+			background-color: #54779533;
+			margin: 0px;
+			padding:0px 12px;
+			justify-content: flex-start;
+		}
 		#personal{
 			width: 100%;
 			flex-direction: column;
 			text-align: right;
+		}
+		#contacts, #skills{
+			font-size: 11px;
+			text-align: right;
+			margin: 0px;
+		}
+		#skills ul li{
+			border: 1px solid #00000022;
+			position: relative;
+		}
+		#skills ul li div{
+			position: absolute;
+			margin: 0px;
+			padding: 0px;
+			background-color: darkcyan;
+			height: 100%;
+			opacity: .6
+		};
+		#right{
+			margin: 15px;
+		}
+		#right header{
+			margin: 20px;
 		}
 		table{
 			width: 75%;
@@ -41,22 +78,24 @@
 			padding: 30px 10px;
 		}
 		ul{	
-			margin: auto;
 			padding: 0px;
 			list-style: none;
-			display: inline-flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			align-items: flex-end;
 		}
-		ul li{ display: inline; padding-right:30px; letter-spacing: 3px;}
+		ul li{ letter-spacing: 3px; padding-bottom: 8px;}
 		#Additional ul{
-			list-style: none;
+			width: 75%;
+			margin: auto;
+			padding: 8px;
+			border: 1px solid black;
 			display: block;
 			flex-wrap: wrap;
 			justify-content: center;
 		}
-		#Additional ul li{ display: block; padding-right:30px; letter-spacing: 3px;}
-		i{padding: 10px 15px; color: darkcyan; font-size: 20px}
+		#Additional ul li{ display: block; padding-right:30px; letter-spacing: inherit; font-size: 15px}
+		#Additional ul li:before{ content: "- "; }
+		i{padding: 10px 8px; color: darkcyan; font-size: 16px}
 		span{
 			width: 200px;
 			text-align: right;
@@ -70,55 +109,72 @@
 			margin-bottom: 50px;	
 		}
 		hr{
+			margin: 3px;
 			margin-bottom: 0px;
 		}
 	</style>
 </head>
 <body>
-	<header>
+	<div id="left">
+		<section>
 		<div id="personal">
 			<h1>MARCO SCIORTINO</h1>
 			Date of Birth: 17/08/1988 - Languages: Italian, English
 		</div>
-		<hr>
-	</header>
-	<section>
-		<div id="Contacts">
+		<hr >
+		<div id="contacts">
 			<span>Contact Details</span>
 			<ul>
-				<li><i class="fas fa-map-marked-alt"></i>Flat 5 Windsor House, 33 Upton Park, SL12DA, Slough</li>
-				<li><i class="fas fa-phone-square"></i>07541494830</li>
-				<li><i class="fas fa-at"></i>sciortino.mrc@gmail.com</li>
-				<li><i class="fab fa-chrome"></i><a href="https://sciortino-mrc.netlify.com" target="_blank">sciortino-mrc.netlify.com</a></li>
-				<li><i class="fab fa-github-square"></i><a href="https://github.com/sciortinomrc" target="_blank">github.com/sciortinomrc</a></li>
+				<li title="Address"><i class="fas fa-map-marked-alt"></i>Flat 5 Windsor House, 33 Upton Park, SL12DA, Slough</li>
+				<li title="Phone"><i class="fas fa-phone-square"></i>07541494830</li>
+				<li title="E-mail"><i class="fas fa-at"></i>sciortino.mrc@gmail.com</li>
+				<li title="Website"><i class="fab fa-chrome"></i><a href="https://sciortino-mrc.netlify.com" target="_blank">sciortino-mrc.netlify.com</a></li>
+				<li title="GitHub"><i class="fab fa-github-square"></i><a href="https://github.com/sciortinomrc" target="_blank">github.com/sciortinomrc</a></li>
 			</ul>
 		</div>
 		<hr>
-		<div id="Skills">
+		<div id="skills">
 			<span>Technical Skills</span>
 			<ul>
-				<li><i class="fab fa-html5"></i>HTML5</li>
-				<li><i class="fab fa-css3-alt"></i>CSS3</li>
-				<li><i class="fab fa-js-square"></i>Javascript</li>
-				<li><i class="fab fa-node-js"></i>NodeJS</li>
-				<li><i class="fab fa-react"></i>React</li>
-				<li><i class="fab icon-redux"></i>Redux</li>
-				<li><i class="fab icon-psql"></i>PostgreSQL</li>
-				<li><i class="fab icon-csharp"></i>C#</li>
-				<li><i class="fab fa-npm"></i>NPM</li>
-				<li><i class="fab fa-github"></i>GitHub</li>
+				<li><div style="width: 80%"></div>HTML5/CSS3</li>
+				<li><div style="width: 70%"></div>Javascript</li>
+				<li><div style="width: 70%"></div>NodeJS</li>
+				<li><div style="width: 75%"></div>React</li>
+				<li><div style="width: 45%"></div>Redux</li>
+				<li><div style="width: 60%"></div>ExpressJS</li>
+				<li><div style="width: 50%"></div>PostgreSQL</li>
+				<li><div style="width: 60%"></div>C#</li>
+				<li><div style="width: 75%"></div>Debugging</li>
+				<li><div style="width: 55%"></div>UI/UX Design</li>
 			</ul>
 		</div>
+	</section>
+	</div>
+	<div id="right">
+		<header>
+			Hard-working self thought Front-end developer with interest on BackEnd development.<br>
+			Quick learner and thinker, enthusiastically passionated for algorithms problem solving<br>
+			Developed web applications, server connected to SQL database and company adHoc software. <br>
+			Regular attendee of hackatons and coding challenges.
+		</header>
 		<hr>
 		<div id="Dev">
 			<span>Experience</span>
 			<table width="100%">
 				<tr>
+					<td width="30%">Full Stack Web Developer<br> <b>Freelancer</b>
+						<i>Currently in progress</i>
+					</td>
+					<td>MappyPals<br>
+					Social-Network-like web application for travellers to keep track of friend located all over the world.<br>
+					- React - ExpressJS - MongoDB - MapboxGL
+					</td>
+				</tr>
+				<tr>
 					<td width="30%">Full Stack Web Developer<br> <b>Freelancer</b></td>
 					<td>Pagesify - Facebook pages showcase and collection.<br>
-					-Design: CSS - Bootstrap
-					-FrontEnd: built using React/Redux framework and the latest ES6 technology. To mention, the use of Facebook API for Javascript.
-					-BackEnd: Server built using ExpressJS with server side Facebook API calls and data storage using PostgreSQL database.
+					Facebook based web application for Facebook pages users and owner. A share place for everyone who likes following various categories of Facebook pages.<br>
+					- React/Redux - ExpressJS - PostgreSQL - Google API
 					</td>
 				</tr>
 				<tr>
@@ -137,18 +193,13 @@
 			<span>Other relevant positions</span>
 			<table width="100%">
 				<tr>
-					<td width="30%">Logistic Coworker<br> <b>IKEA</b><br> 27.05.2018 - current </td>
-					<td>Full Serve Warehouse coworker - Team Building - Shifts management - Inventory - Replenishment - Products Space management - Racking inspection SEMA - Customer orders collection - Department newsletter operative - Stock investigations - Creation of simple and complex Microsoft Excel tools based on software programming knowledge.</td>
-				</tr>
-				<tr>
-					<td width="30%">Sales Coworker<br> <b>IKEA</b><br> 21.05.2016 - 26.05.2018 </td>
-					<td>Self serve Furniture Area coworker - SSFA Basics - Customer care - Team Building - Shifts management - Inventory - Replenishment - Products Space management - Racking inspection SEMA.</td>
+					<td width="30%">Coworker<br> <b>IKEA</b><br> 10.2016 - current </td>
+					<td>Deep study of IKEA system formulas and working methods - Improved inventory accuracy of 15% within 2 months - Trainer for other Employees</td>
 				</tr>
 				<tr>
 					<td width="30%">Project Leader<br> <b>IKEA</b><br> 10.2016 - 07.2017 </td>
-					<td>Full re-plan of Self Serve furniture area focused on customer experience (ease of shopping and products availability) and High replenishment standards, creation of advanced Excel tools.</td>
+					<td>Full re-plan of Self Service department (using an advanced Excel tool created just for the project) focused on customer experience and High replenishment standards - Increased monthly sales by 4% </td>
 				</tr>
-
 			</table>
 		</div>
 		<hr>
@@ -156,16 +207,16 @@
 			<span>Training and Education</span>
 			<table width="100%">
 				<tr>
-					<td width="30%">High School<br> <b>Vittorio Emanuele III</b><br> Palermo, Italy<br> 2002 - 2010</td>
-					<td>Information technology - Web and Software development</td>
+					<td width="30%">Online course<br> <b>UDEMY certified</b><br> 05.2018 - 11.2018 </td>
+					<td>Zero to mastery: Web full stack development - HTML, CSS, Javascript, React, Redux, NodeJS, ExpressJS, PostgreSQL</td>
 				</tr>
 				<tr>
 					<td width="30%">Online course<br> <b>UDEMY certified</b><br> 04.2018</td>
 					<td>C# 7.0  from Beginner to Expert</td>
 				</tr>
 				<tr>
-					<td width="30%">Online course<br> <b>UDEMY certified</b><br> 05.2018 - 11.2018 </td>
-					<td>Zero to mastery: Web full stack development - HTML, CSS, Javascript, React, Redux, NodeJS, ExpressJS, PostgreSQL</td>
+					<td width="30%">High School<br> <b>Vittorio Emanuele III</b><br> Palermo, Italy<br> 2002 - 2010</td>
+					<td>Information technology - Web and Software development</td>
 				</tr>
 
 			</table>
@@ -182,6 +233,6 @@
 			</ul>
 			
 		</div>
-	</section>
+	</div>
 </body>
 </html>
