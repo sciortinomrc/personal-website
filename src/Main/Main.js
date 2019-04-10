@@ -3,12 +3,14 @@ import PersonalData from './PersonalData';
 import Skills from './Skills';
 import PersonalDescription from './PersonalDescription';
 import Portfolio from './Portfolio';
+import url from "../Resume.html";
 
 
 
 const Main=()=>{
 	return(
 		<div className="background">
+			<a href={url}>Resume</a>
 			<PersonalData />
 			<hr className="hr-padding no-spacing"/>
 			<Skills />
