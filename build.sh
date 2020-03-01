@@ -1,4 +1,4 @@
 git pull
 npm install
 npm run build
-mv build /etc/www/mrcdev/
+mv build /var/www/mrcdev
