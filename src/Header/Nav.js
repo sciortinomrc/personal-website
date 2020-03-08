@@ -1,21 +1,30 @@
 import React from 'react';
 import './Header.css';
+import logo from '../images/logo.png';
 
-const Header=()=>{
+const Header=()=>{	
+	const [show,setShow] = React.useState(false);
+	const [imgHeight, setHeight] = React.useState(150)
+	window.addEventListener("scroll",()=>{
+		if(window.scrollY>0){
+			setHeight(80)
+			setShow(true)
+		}
+		else{
+			setHeight(150);
+			setShow(false);
+		}
+	})
+	let navClasses = "navbar navbar-light smallnav justify-content-center";
+	if(show) navClasses = "navbar navbar-light sticky-top smallnav nav-shadow";
 	return(
-		<div id="navigation">
-			<div >
-				<h1 id="nav-text" ><span className="text-orange">Everyone </span><span className="disappear">in this country </span> <span className="text-lblue">should </span><span className="disappear">learn how to </span> <span className="text-green">code</span><span className="disappear">, it teaches you how to think."</span></h1>
-			</div>
-			<div id="nav">
-			<a id="afirst" href="#first">Marco Sciortino</a>
-			<a id="asecond" href="#second">Skills</a>
-			<a id="athird" href="#third">Portfolio</a>
-			<a id="afourth" href="#fourth">About</a>
-			</div>
-		</div>
+		<nav className={navClasses}>
+			<a className="navbar-brand" href="/">
+				<img src={logo} height={imgHeight} className="d-inline-block align-top m-3" alt="" />	
+			</a>
+		</nav>
 		
-		)
+	)
 }
 
 
