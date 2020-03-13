@@ -5,14 +5,15 @@ body{
 
 section{
     padding-top: 50px;
-    transition: height .3 ease-in-out
+    transition: height .3s ease-in-out
 }
 .mivh{
-    min-height: 100vh;
+    min-height: 200vh;
 }
 a{
     color: darkorange;
     text-decoration: none;
+    transition: margin .3s linear;
 }
 a:hover, a:active, a:focus, a:visited{
     color: #cc6139;

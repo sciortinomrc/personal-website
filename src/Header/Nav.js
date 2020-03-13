@@ -15,12 +15,12 @@ const Header=()=>{
 			setShow(false);
 		}
 	})
-	let navClasses = "navbar navbar-light smallnav justify-content-center";
+	let navClasses = "navbar navbar-light smallnav";
 	if(show) navClasses = "navbar navbar-light sticky-top smallnav nav-shadow";
 	return(
 		<nav className={navClasses}>
-			<a className="navbar-brand" href="/">
-				<img src={logo} height={imgHeight} className="d-inline-block align-top m-3" alt="" />	
+			<a className="navbar-brand" href="/" style={{margin:show?"0px":"auto"}}>
+				<img src={logo} style={{height:imgHeight}} className="d-inline-block align-top m-3" alt="" />	
 			</a>
 		</nav>
 		

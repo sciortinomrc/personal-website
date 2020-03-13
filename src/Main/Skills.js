@@ -37,7 +37,7 @@ const Skills=()=>{
 					</h1>
 				</div>
 				<div>
-					<h4 className="text-custom-2 ">Social and Email Platforms</h4>
+					<h4 className="text-custom-2 ">Social and Email Platforms integration</h4>
 					<h1 className="mb-5">
 						<i className="cib-facebook-f" title="FACEBOOK"></i>
 						<i className="cib-instagram" title="INSTAGRAM"></i>
