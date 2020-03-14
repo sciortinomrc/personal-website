@@ -2,7 +2,7 @@ import React from 'react';
 const PersonalDescription=()=>{
 	return(
 		<section id="fourth">
-			<div>
+			<div class="p-3">
 				<h2>Hello there!</h2>
 				<p>I am <b>Marco</b> from Italy, I have been living in the UK since October 2014 and I am a Full stack web developer.</p>
 				I am married to Gaia and we have two cats: Ella and Chloe.<br />
@@ -12,7 +12,7 @@ const PersonalDescription=()=>{
 				it was time to give myself the best shot. <br />
 				After a decade I went back to what I studied in high school: Computer programming and now here I am!<br />
 				If you want to know more or want to discuss contract opportunities, give me a shout! You can find my contact details below!<br />
-				<h2> I am looking forward to hearing from you </h2>
+				<h4> I am looking forward to hearing from you </h4>
 			</div>
 		</section>
 	)

@@ -3,23 +3,34 @@ import './Header.css';
 import logo from '../images/logo.png';
 
 const Header=()=>{	
-	const [show,setShow] = React.useState(false);
-	const [imgHeight, setHeight] = React.useState(150)
-	window.addEventListener("scroll",()=>{
+	const mobile = "ontouchstart" in document.documentElement;
+	const [state, setState] = React.useState({show:false, imgHeight:window.scrollY>0?(mobile?50:80):(mobile?130:150)})
+	let allow = true;
+	
+	window.$(window).off().on("scroll",()=>{
 		if(window.scrollY>0){
-			setHeight(80)
-			setShow(true)
+			if(!show && allow){
+				allow=false;
+				setState({show: true, imgHeight: mobile?50:80})
+				setTimeout(()=>allow=true,3000);
+			}
 		}
 		else{
-			setHeight(150);
-			setShow(false);
+			if(show && allow){
+				allow=false;
+				setState({show: false, imgHeight: mobile?130:150})
+				setTimeout(()=>allow=true,3000);
+			}
 		}
 	})
-	let navClasses = "navbar navbar-light smallnav";
-	if(show) navClasses = "navbar navbar-light sticky-top smallnav nav-shadow";
+
+	const {show,imgHeight} = state;
+	let navClasses = "navbar navbar-light smallnav whole";
+	if(show) navClasses = "navbar navbar-light smallnav nav-shadow";
+
 	return(
 		<nav className={navClasses}>
-			<a className="navbar-brand" href="/" style={{margin:show?"0px":"auto"}}>
+			<a className="navbar-brand" href="/" style={{margin:show?"0px 0px":"0px calc( 50% - 150px )"}}>
 				<img src={logo} style={{height:imgHeight}} className="d-inline-block align-top m-3" alt="" />	
 			</a>
 		</nav>
