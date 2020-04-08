@@ -2,6 +2,6 @@ npm install
 npm run build
 mv /var/www/mrcdev/apps ~/tmp/
 
-sudo rm /var/www/mrcdev -r
+sudo rm /var/www/mrcdev/* -r
 
 tar -czvf build.tar.gz ./build
