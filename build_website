@@ -1,6 +1,6 @@
 npm install
 npm run build
-mv /var/www/mrcdev/apps /tmp/
+mv /var/www/mrcdev/apps ~/
 
 sudo rm /var/www/mrcdev -r
 
