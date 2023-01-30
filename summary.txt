@@ -1,0 +1,46 @@
+Name: Marco Sciortino
+Title: Software Engineer
+Languages: Italian / English
+
+Summary:
+Highly motivated and experienced software engineer with 4 years of experience in developing and maintaining software systems. Proficient in NodeJS, React/Redux, Python, and UI/UX design. Strong understanding of IT and web development, with excellent problem-solving skills and the ability to work well under pressure. Proven track record of delivering high-quality software on time and on budget. Strong verbal and written communication skills, ability to work independently or as part of a team, and desire to work in a fast-paced environment. Seeking to leverage my skills and experience to make meaningful contributions to a fintech company.
+
+Education:
+2004-2011: High school IT and Web development
+2015: Musical Theatre training at AMTA
+
+Experience:
+2012-2014: Private Singing teacher - Taught private singing lessons to students of all ages and skill levels
+
+2014-2015: Fast food team member - Griller - Worked as a griller at a fast food restaurant, responsible for preparing and cooking food items
+
+2015-2019: Self serve - Shopfloor Staff - IKEA Reading - Worked as a shopfloor staff member at IKEA Reading, responsible for assisting customers with self-serve purchases and providing excellent customer service
+
+2019-2023: Software Engineer - Meterian - Developed and maintained software systems, and gained experience in cybersecurity, React Native and UI/UX design through online courses and training provided by the company.
+
+Technical Skills:
+
+NodeJS: 9/10
+React / Redux: 8/10
+Python: 7/10
+UI/UX (with Figma): 7/10
+
+Courses and Certifications:
+
+Hixcox Cybersecurity Academy (Meterian, online) - A comprehensive online course that covered various aspects of cybersecurity, including network security, incident response, and threat intelligence.
+React Native course (Udemy, online) - An online course provided by Zero to Mastery that focused on developing mobile apps using the React Native framework.
+UI/UX Design course (Udemy, online) - An online course provided by Zero to Mastery that covered the principles and best practices of user interface and user experience design, and also used Figma as the tool for UI/UX design.
+React Zero to Mastery (Udemy, online) - A comprehensive online course provided by Zero to Mastery that covered the concepts and best practices of developing web applications using React.
+
+
+Main Projects:
+
+'What can I cook? - vegan recipe finder' (react, redux, python, sass) - A vegan recipe finder app that suggests recipes based on ingredients and dietary restrictions.
+King - multiplayer card game (vanilla js, jquery, python) - A multiplayer card game that allows players to compete against each other in real-time.
+
+
+Secondary/Old Projects:
+
+Pagesify - facebook pages collection (react, redux , express js) - A web app that allows users to create and manage collections of Facebook pages.
+Matching game - vanilla js - A simple matching game built using vanilla JavaScript.
+Organization calendar - react - A calendar app that helps users to organize their schedule and events.
