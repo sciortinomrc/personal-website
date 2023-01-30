@@ -1,0 +1,62 @@
+@keyframes slam{
+    0%{
+        opacity: 0;
+        transform: scale(50)
+    }
+    40%{
+        opacity: 0;
+    }
+    99%{
+        opacity: 1;
+        transform: scale(0.999, 0.999)
+    }
+    100%{
+        opacity:1;
+        transform: scale(1,1)
+    }
+}
+
+@keyframes rattle {
+    0% { margin-top: 0; margin-left: 0; }
+    10% { margin-top: -5px; margin-left: 0; }
+    20% { margin-top: 0; margin-left: -5px; }
+    30% { margin-top: 5px; margin-left: 0; }
+    40% { margin-top: 0; margin-left: 5px; }
+    50% { margin-top: -2px; margin-left: 0; }
+    60% { margin-top: 0; margin-left: -2px; }
+    70% { margin-top: 2px; margin-left: 0; }
+    80% { margin-top: 0; margin-left: 2px; }
+    90% { margin-top: -1px; margin-left: 0; }
+    100% { margin-top: 0; margin-left: 0; }
+}
+
+@keyframes scratch{
+    0% {width: 0px}
+    100%{width: 100px}
+}
+
+@keyframes fadein{
+    0% {opacity: 0}
+    100%{opacity: 1}
+}
+
+@keyframes fade-bg-color{
+    0% {
+    }
+    60% {
+        height: 100vh;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes reduce-height{
+    0% {background-color: #ffffff00;}
+    100% {background-color: var(--color-6);}
+}
+
+@keyframes move-logo{
+    50% { opacity: 1; transform: scale(1);}
+    100% { opacity: 0;  transform: scale(1)}
+}

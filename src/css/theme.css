@@ -1,0 +1,79 @@
+:root{
+    --color-0: white;
+    --color-1: #4cbfa6;
+    --color-2: #f3d448;
+    --color-3: #482673;
+    --color-4: #ed0b70;
+    --color-5: #023b59;
+    --color-6: #e2e1d7;
+    --color-7: #b8b8b8;
+    --color-8: #ebe8e8;
+
+    --colors-transparent: transparent;
+
+    --colors-whites-1: #fff;
+    --colors-whites-2: #b8b8b8;
+    --colors-whites-1-075: rgba(255, 255, 255, 0.76);
+
+    --colors-main: #4cbfa6;
+    --colors-main-075: #4cbfa6;
+    --colors-main-050: #4cbfa683;
+    --colors-main-025: #4cbfa62f;
+
+
+    --color-secondary: #023b59;
+    --color-secondary-075: #023b59c2;
+    --color-secondary-050: #023b5981;
+    --color-secondary-025: #023b592a;
+
+
+    --color-tertiary: #482673;
+    --color-tertiary-075: #482673c2;
+    --color-tertiary-050: #48267381;
+    --color-tertiary-025: #4826732a;
+
+
+    --color-job: #fceba1;
+    --color-job-secondary: #ebd98d;
+
+    --color-edu: #48f3ba;
+    --color-edu-secondary: #46e6b0;
+
+    
+    --current-main-color: var(--color-6);
+    --font-face-1: 'Comfortaa', cursive;
+    --font-face-2: 'Libre Baskerville', cursive;
+}
+
+*{
+    font-family: var(--font-face-2) ;
+}
+
+h1,h2,h3{
+    font-family: var(--font-face-1) ;
+}
+
+*{
+    font-size:  18px;
+    line-height: 1.4
+}
+h1{
+    font-size: 33px
+}
+h2{
+    font-size: 26px;
+}
+
+
+@media (max-width: 767px){
+    *{
+        font-size:  15px;
+        line-height: 1.4
+    }
+    h1{
+        font-size: 26px
+    }
+    h2{
+        font-size: 22px;
+    }
+}

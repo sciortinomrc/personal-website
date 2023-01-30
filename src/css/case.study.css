@@ -1,0 +1,52 @@
+.case-study-wrapper{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #7777;
+    z-index: 2000;
+}
+
+.case-study-inner{
+    max-width: 75vw;
+    max-height: 75vh;
+    background-color: white;
+    margin: 50px auto;
+    position: relative;
+}
+
+.case-study{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 75vw;
+    max-height: 75vh;
+}
+
+.case-study-close-btn{
+    position: absolute;
+    top: 10px;
+    right: 25px; 
+    transform: scale(2);
+    cursor: pointer;
+}
+
+.case-study img{
+    width:100%;
+}
+
+html:has(div.case-study){
+    overflow: hidden;
+}
+
+@media(max-width: 1200px){
+    .case-study-inner{
+        max-width: 100vw;
+        max-height: 100vh;
+        margin: auto
+    }
+    .case-study{
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+}

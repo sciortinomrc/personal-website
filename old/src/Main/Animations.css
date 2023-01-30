@@ -1,0 +1,58 @@
+
+@keyframes appear{
+	0%{ 
+		opacity: 0; 
+		margin-top: -50px;
+	}
+	100%{ 
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+.appear{
+	animation-name: appear;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes skills{
+	0%{ 
+		transform: scale(0);
+		opacity: 0; 
+		margin-top: -50px;
+	}
+	100%{ 
+		transform: scale(1);
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+.skills{
+	animation-name: skills;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes disappear{
+	0%{ 
+		opacity: 1; 
+		display: inline;
+	}
+	20%{
+		opacity: 0;
+	}
+	80%{
+		font-size: 0px;
+		opacity: 0;
+	}
+	100%{ 
+		font-size: 0px;
+		display: none;
+		opacity: 0;
+	}
+}
+.disappear-animation{
+	animation-name: disappear;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

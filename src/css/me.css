@@ -1,0 +1,86 @@
+#me{
+    padding: 200px 100px 50px 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+#me-content{
+    margin: auto;
+    width: 100%;
+    max-width: 300px;
+    transform: rotate(16deg);
+    position: relative;
+}
+
+#me-content > div {
+    position: absolute;
+    top: -305px;
+    left: 80px;
+    width: 100%;
+    transform: scale(0.8);
+}
+#me-content > div *{
+    line-height: 1.75;
+}
+
+#about a{
+    display: inline-flex;
+    align-items: end;
+    padding: 2px;
+    line-height: 0.8;
+}
+
+@media (max-width: 500px){
+    #me{
+        max-width: 100vw;
+        overflow: hidden;
+        padding: 153px 75px 112px 25px;
+        margin-left: -40px;
+    }
+    #me-content #about{
+        font-size: 14px;
+    }
+}
+
+/* #me{
+    border-bottom:30px solid var(--color-3);
+    max-height: calc( 100vh - 110px );
+    position: relative;
+}
+
+#me .page-down{
+    background-color: var(--color-6);
+}
+
+#me-content{
+    margin-left: -10vw;
+    opacity: 0;
+    transition: margin-left 1s ease-out, opacity .6s ease .5s
+}
+#me-content.show{
+    margin-left: 0px;
+    opacity: 1;
+}
+
+#me > *{
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+#name{
+    padding-top: 10vh;
+}
+#about{
+    max-width:  750px;
+    color: var(--color-5)
+}
+#name *{
+    display: inline-block;
+}
+
+@media(max-width: 767px){
+
+    #name h1, #name h2{
+        margin-bottom: 3px
+    }
+
+} */

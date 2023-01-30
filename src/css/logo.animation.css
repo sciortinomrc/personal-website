@@ -1,0 +1,92 @@
+
+.logo-animation{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.1s linear;
+
+}
+
+.logo-animation #logo{
+    margin:0px;
+    margin: auto;
+    transform: scale(3);
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.logo-animation #logo-m, .logo-animation #logo-r, .logo-animation #logo-c, .logo-animation #logo-dev{
+    opacity: 0
+}
+
+.logo-animation #logo-line{
+    width: 0px
+}
+
+.logo-animation #logo-m{
+    animation: slam;
+    animation-duration: .5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-m-wrapper{
+    animation: rattle;
+    animation-duration: .3s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-r{
+    animation: slam;
+    animation-duration: .5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-r-wrapper{
+    animation: rattle;
+    animation-duration: .3s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-c{
+    animation: slam;
+    animation-duration: .5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-c-wrapper{
+    animation: rattle;
+    animation-duration: .3s;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+}
+.logo-animation #logo-line{
+    animation: scratch;
+    animation-duration: .6s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.logo-animation #logo-dev{
+    animation: fadein;
+    animation-duration: .5s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.logo-animation #logo{
+    animation: move-logo;
+    animation-duration: 2s;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+}
+
+.logo-animation{
+    animation: fade-bg-color;
+    animation-duration: 2s;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+}
